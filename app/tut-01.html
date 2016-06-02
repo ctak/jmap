@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>My AngularJS App</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+  <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+  <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+  <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+
+  <style>
+    #mapid { height: 540px; }
+  </style>
+</head>
+<body>
+  <ul class="menu">
+    <li><a href="#!/view1">view1</a></li>
+    <li><a href="#!/view2">view2</a></li>
+  </ul>
+
+  <div id="mapid"></div>
+
+  <script>
+document.addEventListener("DOMContentLoaded", function (event) {
+    console.log("DOM fully loaded and parsed");
+
+    var mymap = L.map('mapid').setView([37.2502440, 127.0764590], 15);
+
+L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+    attribution: 'Jugarrd',
+    maxZoom: 18,
+    id: 'ctak.09om5012',
+    accessToken: 'pk.eyJ1IjoiY3RhayIsImEiOiJjaW95NmNnbGkwMXRpdTBtOGg5dGJwNG8xIn0.u_-XKFlswb9EgUqAf60dtQ'
+}).addTo(mymap);
+    
+});
+  </script>
+</body>
+</html>
